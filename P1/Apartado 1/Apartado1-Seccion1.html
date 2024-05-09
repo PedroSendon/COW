@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styleApartado1-Seccion1.css">
+    <title>Reserva de hoteles</title>
+    <meta name="description" content="Sitio web destinado a la reserva de hoteles">
+    <meta name="keywords" content="hotel,reserva,hoteles,reserva de hoteles,vacaciones,descanso">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>Reservas de Hoteles</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#hoteles">Hoteles</a></li>
+                <li><a href="#reservas">Reservas</a></li>
+                <li><a href="#contacto">Registrar alojamiento</a></li>
+            </ul>
+        </nav>
+        <div class="auth-links">
+            <button class="btnLog" type="submit">Iniciar Sesión</button>
+            <button class="btnLog" type="submit">Registrarse</button>
+        </div>
+    </header>
+    <hr class="divider"> <!-- Aquí agregas la línea horizontal con una clase para personalizarla -->
+
+    <div class="search-container">
+
+        <section class="hotel-search">
+            <form action="https://es.wikipedia.org/wiki/Special:Search" method="get">
+                <div class="form-group">
+                    <label for="search">Destino:</label>
+                    <input type="text" id="search" name="search" placeholder="Ciudad, hotel, lugar de interés...">
+                </div>
+                <div class="form-group">
+                    <label for="checkin">Check-in:</label>
+                    <input type="date" id="checkin" name="checkin">
+                </div>
+                <div class="form-group">
+                    <label for="checkout">Check-out:</label>
+                    <input type="date" id="checkout" name="checkout">
+                </div>
+                <div class="form-group">
+                    <label for="personas">Personas:</label>
+                    <input type="number" id="personas" name="personas" min="1" max="10">
+                </div>
+                <button type="submit">Buscar</button>
+            </form>
+        </section>
+    </div>
+
+    <div class="famous-accommodations">
+        <h2>Alojamientos Más Famosos</h2>
+        <table class="accommodations-table">
+            <tbody>
+                <tr>
+                    <td><img src="./images/hotel.jpg" alt="Hotel Madrid" class="accommodation-image"></td>
+                    <td><img src="./images/Resort.jpeg" alt="Hotel Madrid" class="accommodation-image"></td>
+                    <td><img src="./images/Village.jpeg" alt="Hotel Madrid" class="accommodation-image"></td>
+                    <td><img src="./images/Villa1.webp" alt="Hotel Madrid" class="accommodation-image"></td>
+                </tr>
+                <tr>
+                    <td><strong>Madrid, España</strong><br>Dos personas<br>1 Marzo - 31 Marzo</td>
+                    <td><strong>Alicante, España</strong><br>Seis personas<br>23 Junio - 29 Junio</td>
+                    <td><strong>Menorca, España</strong><br>Ocho personas<br>4 Agosto - 16 Agosto</td>
+                    <td><strong>Barcelona, España</strong><br>Doce personas<br>12 Enero - 19 Enero</td>
+                </tr>
+                <tr>
+                    <td>200€/noche<br><span class="rating">★★★★★</span></td>
+                    <td>400€/noche<br><span class="rating">★★★★</span></td>
+                    <td>500€/noche<br><span class="rating">★★★★★</span></td>
+                    <td>1000€/noche<br><span class="rating">★★★★</span></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <div class="accommodation-types">
+        <h2>Busca por tipo de alojamiento</h2>
+
+        <div class="accommodations">
+
+            <!--  -->
+
+            <div class="accommodation">
+                <a href="https://www.booking.com/villas" target="_blank">
+                    <img src="Images/Villas.jpg" alt="Villas">
+                    <p>Villas</p>
+                </a>
+            </div>
+
+            <!--  -->
+
+            <div class="accommodation">
+                <a href="https://www.booking.com/hotel" target="_blank">
+                <img src="Images\HabitacionHotel.jpg"
+                    alt="Hotel">
+                <p>Hoteles</p>
+                </a>
+            </div>
+
+            <!--  -->
+
+            <div class="accommodation">
+                <a href="https://www.booking.com/chalet" target="_blank">
+                <img src="Images\Chalet.jpeg"
+                    alt="Hotel">
+                <p>Chalets</p>
+                </a>
+            </div>
+
+            <!--  -->
+
+            <div class="accommodation">
+                <a href="https://www.booking.com/apartments" target="_blank">
+                <img src="Images\Apartamento.jpg"
+                    alt="Hotel">
+                <p>Apartamentos</p>
+                </a>
+            </div>
+
+            <!--  -->
+
+            <div class="accommodation">
+                <a href="https://www.booking.com/resorts" target="_blank">
+                <img src="Images\Resorts.jpg"
+                    alt="Hotel">
+                <p>Resorts</p>
+                </a>
+            </div>
+
+            <!--  -->
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>Teléfono: +34 111 111 111</p>
+                <p>Email: info@reservahoteles.com</p>
+            </div>
+            <div class="footer-section">
+                <h4>Compañía</h4>
+                <ul>
+                    <li><a href="#about">Sobre nosotros</a></li>
+                    <li><a href="#privacy">Política de privacidad</a></li>
+                    <li><a href="#terms">Términos de servicio</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Síguenos</h4>
+                <div class="social-links">
+                    <a href="http://facebook.com">Facebook</a>
+                    <a href="http://twitter.com">Twitter</a>
+                    <a href="http://instagram.com">Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Reservas de Hoteles. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

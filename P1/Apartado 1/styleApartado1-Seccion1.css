@@ -1,0 +1,391 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1em;
+}
+
+.logo h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    /* Elimina el subrayado predeterminado */
+    color: #000;
+    /* Color del texto */
+    transition: color 0.3s ease;
+    /* Opcional: Transición suave del color */
+}
+
+.auth-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #000;
+    /* Cambiado a negro */
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    /* Añade un subrayado al pasar el ratón */
+    color: #0056b3;
+    /* Opcional: Cambia el color del texto al hacer hover */
+}
+
+.search-container {
+    background-color: #E1E1E1;
+    /* Color carne */
+    padding: 20px;
+    width: calc(100% - 40px);
+    /* Ajusta este valor según el ancho de tu navbar */
+    max-width: 960px;
+    /* O el ancho máximo que prefieras */
+    margin: 20px auto;
+    /* Centra el contenedor */
+    border-radius: 8px;
+    /* Opcional: bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Opcional: sombra para darle profundidad */
+}
+
+/* Ajustes para los elementos internos del formulario, si es necesario */
+.search-container input,
+.search-container button {
+    margin: 5px 0;
+    /* Espaciado vertical entre campos */
+}
+
+.search-container button {
+    background-color: #4CAF50;
+    /* Verde */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+    background-color: #45a049;
+}
+
+#buscar {
+    margin: 20px;
+    text-align: left;
+}
+
+#buscar form {
+    margin: 10px;
+}
+
+.input[type="text"] {
+    margin: 0.5em 0;
+    padding: 0.5em;
+}
+
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+.hotel-search {
+    padding: 20px;
+    text-align: center;
+}
+
+.hotel-search .form-group {
+    margin: 10px;
+    display: inline-block;
+}
+
+.hotel-search label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.hotel-search input[type="text"],
+.hotel-search input[type="date"],
+.hotel-search input[type="number"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.hotel-search button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hotel-search button:hover {
+    background-color: #0056b3;
+}
+
+.btnLog {
+    background-color: transparent;
+    /* Fondo transparente */
+    color: black;
+    /* Color del texto */
+    border: 2px solid black;
+    /* Borde de 2px sólido y negro */
+    padding: 10px 20px;
+    /* Espaciado interno del botón */
+    font-size: 16px;
+    /* Tamaño de la fuente */
+    cursor: pointer;
+    /* Cambia el cursor a una mano cuando se pasa sobre el botón */
+    border-radius: 8px;
+    /* Redondea las esquinas del botón */
+    transition: all 0.3s ease;
+    /* Efecto de transición suave para hover */
+}
+
+.btnLog:hover {
+    background-color: black;
+    /* Cambia el fondo a negro al pasar el mouse */
+    color: white;
+    /* Cambia el color del texto a blanco */
+}
+
+.divider {
+    border: 0;
+    /* Elimina el borde predeterminado */
+    height: 1px;
+    /* Establece la altura de la línea */
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    /* Gradiente para la línea */
+    margin: 20px 0;
+    /* Agrega un margen arriba y abajo para separarla de los elementos adyacentes */
+}
+
+.famous-accommodations {
+    width: calc(100% - 40px);
+    /* Ajusta este valor según el ancho de tu contenedor */
+    max-width: auto;
+    /* O el ancho máximo que prefieras */
+    margin: 20px auto;
+    /* Centra el contenedor */
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+}
+
+.famous-accommodations h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.accommodation-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.accommodation-item {
+    width: 18%;
+    /* O el ancho que prefieras */
+    text-align: left;
+    margin-right: 10px;
+    /* Añade un margen si es necesario */
+}
+
+.accommodation-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    max-height: 250px;
+}
+
+.accommodation-info p {
+    margin: 5px 0;
+}
+
+.price-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rating {
+    /* Estilos para la valoración: tamaño, color, etc. */
+    font-size: 1em;
+    /* Ajusta según necesites */
+    color: #E0A800;
+    /* Color dorado para las estrellas, ajusta según tu paleta de colores */
+}
+
+.accommodation-info p strong {
+    font-weight: bold;
+    /* Aplica negrita al texto */
+}
+
+.accommodation-types {
+    margin: 20px auto;
+    max-width: 960px;
+}
+
+.accommodation-types h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
+.left-control {
+    left: 10px;
+}
+
+.right-control {
+    right: 10px;
+}
+
+.accommodations {
+    display: flex;
+    overflow-x: auto;
+}
+
+.accommodation {
+    margin: 0 10px;
+    text-align: center;
+}
+
+.accommodation img {
+    width: 200px;
+    /* Define el ancho que desees */
+    height: 150px;
+    /* Define el alto que desees */
+    object-fit: cover;
+    /* Asegura que la imagen cubra completamente el área sin perder su proporción */
+    border-radius: 4px;
+    /* Opcional: si quieres bordes redondeados */
+    margin-bottom: 10px;
+    /* Espacio debajo de la imagen */
+}
+
+.accommodation p {
+    font-size: 0.9em;
+    margin: 0;
+}
+.site-footer {
+    background-color: #D9D9D9;
+    color: black;
+    text-align: center;
+    padding: 20px 2vw;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px; /* Define un mínimo de ancho para las secciones */
+    margin: 10px;
+}
+
+.footer-section h4 {
+    margin-top: 0;
+}
+
+.footer-section ul, .social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li a, .social-links a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover, .social-links a:hover {
+    color: #aaa;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 1vw; /* El tamaño de la fuente se adapta al ancho de la vista */
+    padding: 10px 0;
+}
+
+/* Estilos para links de redes sociales */
+.social-links a {
+    display: inline-block;
+    margin-right: 10px;
+}
+.famous-accommodations {
+    margin: 0 auto;
+    max-width: 1200px; /* O el ancho que prefieras */
+    padding: 20px;
+    text-align: center;
+}
+
+.famous-accommodations h2 {
+    margin-bottom: 20px;
+}
+
+.accommodations-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.accommodations-table td {
+    padding: 10px;
+    vertical-align: middle;
+}
+
+.accommodation-image {
+    width: auto;
+    height: 120px; /* Ajusta esto según tus necesidades */
+    margin-right: 20px;
+    border-radius: 4px; /* Para bordes redondeados en las imágenes */
+}
+
+.rating {
+    color: #ffc107; /* Color dorado para las estrellas */
+    font-size: 1em;
+}
+
+/* Agrega espacio alrededor de las celdas y un borde sutil */
+.accommodations-table td {
+    border-bottom: 1px solid #ddd;
+}
+
