@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styleApartado1-Seccion1.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <title>Reserva de hoteles</title>
+    <meta name="description" content="Sitio web destinado a la reserva de hoteles">
+    <meta name="keywords" content="hotel,reserva,hoteles,reserva de hoteles,vacaciones,descanso">
+</head>
+
+<body>
+    <header>
+        <!-- Encabezado de la página -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <!-- Barra de navegación -->
+            <div class="container-fluid">
+                <!-- Contenedor fluido para ocupar el ancho completo de la pantalla -->
+                <a class="navbar-brand" href="#">Reservas de Hoteles</a>
+                <!-- Marca del sitio o logo -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <!-- Botón para desplegar el menú en dispositivos pequeños -->
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <!-- Contenido del menú -->
+                    <ul class="navbar-nav">
+                        <!-- Lista de elementos del menú -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#inicio">Inicio</a>
+                            <!-- Enlace al inicio de la página -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#hoteles">Hoteles</a>
+                            <!-- Enlace a la sección de hoteles -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#reservas">Reservas</a>
+                            <!-- Enlace a la sección de reservas -->
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contacto">Registrar alojamiento</a>
+                            <!-- Enlace para registrar alojamiento -->
+                        </li>
+                    </ul>
+                </div>
+                <div class="d-flex">
+                    <!-- Botones de acción -->
+                    <button class="btn btn-outline-primary me-2" type="button" onclick="location.href='LogInCliente.php';">Iniciar Sesión</button>
+
+                    <!-- Botón para iniciar sesión -->
+                    <button class="btn btn-primary" type="button"
+                        onclick="location.href='#registrarse'">Registrarse</button>
+                    <!-- Botón para registrarse -->
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <hr class="divider"> <!-- Aquí agregas la línea horizontal con una clase para personalizarla -->
+
+    <div class="container my-4">
+        <!-- Contenedor principal con margen superior -->
+        <div class="text-center mb-4">
+            <!-- Título y Descripción centrados -->
+            <h2>Buscar hoteles</h2>
+            <!-- Título -->
+            <p>Encuentra tu próxima estancia entre las ofertas</p>
+            <!-- Descripción -->
+        </div>
+        <section class="hotel-search">
+            <!-- Sección de búsqueda de hoteles -->
+            <div class="card p-4">
+                <!-- Tarjeta con formulario de búsqueda -->
+                <form action="buscarHoteles.php" method="post">
+                    <div class="row g-2">
+                        <div class="col">
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-search"></i></span>
+                                <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="¿Adónde vas?">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <!-- Columna -->
+                            <div class="input-group">
+                                <!-- Grupo de entrada -->
+                                <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                                <!-- Icono de calendario -->
+                                <input type="date" class="form-control" id="checkin" name="checkin">
+                                <!-- Entrada de fecha para check-in -->
+                            </div>
+                        </div>
+                        <div class="col">
+                            <!-- Columna -->
+                            <div class="input-group">
+                                <!-- Grupo de entrada -->
+                                <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                                <!-- Icono de calendario -->
+                                <input type="date" class="form-control" id="checkout" name="checkout">
+                                <!-- Entrada de fecha para check-out -->
+                            </div>
+                        </div>
+                        <div class="col">
+                            <!-- Columna -->
+                            <div class="input-group">
+                                <!-- Grupo de entrada -->
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <!-- Icono de usuario -->
+                                <input type="number" class="form-control" id="personas" name="personas" min="1"
+                                    max="10">
+                                <!-- Entrada de número para cantidad de personas -->
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-primary rounded-circle search-button">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <div class="container mt-4">
+        <!-- Contenedor principal con margen superior -->
+
+        <!-- Título de la sección -->
+        <h2 class="mb-4 text-center">Alojamientos Más Famosos</h2>
+        <!-- Título centrado -->
+
+        <div class="row">
+            <!-- Fila para alojamientos -->
+
+            <!-- Alojamiento en Madrid -->
+            <div class="col-md-4 mb-4">
+                <!-- Columna para alojamiento -->
+                <div class="card rounded-lg">
+                    <!-- Tarjeta de alojamiento con bordes redondeados -->
+
+                    <!-- Carrusel de imágenes de Madrid -->
+                    <div id="carouselMadrid" class="carousel slide" data-ride="carousel" data-interval="3000">
+                        <!-- Carrusel de imágenes -->
+                        <div class="carousel-inner">
+                            <!-- Contenido del carrusel -->
+                            <div class="carousel-item active">
+                                <!-- Item activo -->
+                                <img src="./images/hotel.jpg" class="d-block w-100" alt="Hotel Madrid Imagen 1">
+                                <!-- Imagen 1 del hotel en Madrid -->
+                            </div>
+                            <div class="carousel-item">
+                                <!-- Item -->
+                                <img src="./images/hotel2.jpeg" class="d-block w-100" alt="Hotel Madrid Imagen 2">
+                                <!-- Imagen 2 del hotel en Madrid -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <!-- Contenido de la tarjeta -->
+                        <h5 class="card-title">Madrid, España</h5>
+                        <!-- Título del alojamiento -->
+                        <p class="card-text">Dos personas<br>1 Marzo - 31 Marzo<br>200€/noche</p>
+                        <!-- Descripción del alojamiento -->
+                        <a href="cliente.php?nombre=Hotel%20Madrid&ubicacion=Madrid,%20España&personas=2&imagen1=hotel.jpg&imagen2=hotel2.jpeg" class="btn btn-primary">Reservar</a>
+                        <!-- Botón para reservar -->
+                    </div>
+                </div>
+            </div>
+            <!-- Fin de la tarjeta de Madrid -->
+
+            <!-- Alojamiento en Alicante -->
+            <div class="col-md-4 mb-4">
+                <!-- Columna para alojamiento -->
+                <div class="card rounded-lg">
+                    <!-- Tarjeta de alojamiento con bordes redondeados -->
+
+                    <!-- Carrusel de imágenes de Alicante -->
+                    <div id="carouselAlicante" class="carousel slide" data-ride="carousel" data-interval="3000">
+                        <!-- Carrusel de imágenes -->
+                        <div class="carousel-inner">
+                            <!-- Contenido del carrusel -->
+                            <div class="carousel-item active">
+                                <!-- Item activo -->
+                                <img src="./images/Resort.jpeg" class="d-block w-100" alt="Alicante Resort Imagen 1">
+                                <!-- Imagen 1 del resort en Alicante -->
+                            </div>
+                            <div class="carousel-item">
+                                <!-- Item -->
+                                <img src="./images/Resort2.jpeg" class="d-block w-100" alt="Alicante Resort Imagen 2">
+                                <!-- Imagen 2 del resort en Alicante -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body">
+                        <!-- Contenido de la tarjeta -->
+                        <h5 class="card-title">Alicante, España</h5>
+                        <!-- Título del alojamiento -->
+                        <p class="card-text">Seis personas<br>23 Junio - 29 Junio<br>400€/noche</p>
+                        <!-- Descripción del alojamiento -->
+                        <a href="cliente.php?nombre=Hotel Alicante&ubicacion=Alicante, España&personas=6&fecha_entrada=2023-06-23&fecha_salida=2023-06-29&precio_noche=400&imagen1=Resort.jpeg&imagen2=alicante2.jpeg" class="btn btn-primary">Reservar</a>
+                        <!-- Botón para ver detalles -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alojamiento en Menorca -->
+            <div class="col-md-4 mb-4">
+                <!-- Columna para alojamiento -->
+                <div class="card rounded-lg">
+                    <!-- Tarjeta de alojamiento con bordes redondeados -->
+                    <div id="carouselMenorca" class="carousel slide" data-ride="carousel" data-interval="3000">
+                        <!-- Carrusel de imágenes de Menorca -->
+                        <div class="carousel-inner">
+                            <!-- Contenido del carrusel -->
+                            <div class="carousel-item active">
+                                <!-- Item activo -->
+                                <img src="./images/Village.jpeg" class="d-block w-100" alt="Menorca Village Imagen 1">
+                                <!-- Imagen 1 del village en Menorca -->
+                            </div>
+                            <div class="carousel-item">
+                                <!-- Item -->
+                                <img src="./images/Village2.jpeg" class="d-block w-100" alt="Menorca Village Imagen 2">
+                                <!-- Imagen 2 del village en Menorca -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <!-- Contenido de la tarjeta -->
+                        <h5 class="card-title">Alicante, España</h5>
+                        <!-- Título del alojamiento -->
+                        <p class="card-text">Seis personas<br>23 Junio - 29 Junio<br>400€/noche</p>
+                        <!-- Descripción del alojamiento -->
+                        <a href="cliente.php?nombre=Hotel Alicante&ubicacion=Alicante, España&personas=6&fecha_entrada=2023-06-23&fecha_salida=2023-06-29&precio_noche=400&imagen1=Village.jpeg&imagen2=alicante2.jpeg" class="btn btn-primary">Reservar</a>
+                        <!-- Botón para reservar -->
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Alojamiento en Barcelona -->
+            <div class="col-md-4 mb-4">
+                <!-- Columna para alojamiento -->
+                <div class="card rounded-lg">
+                    <!-- Tarjeta de alojamiento con bordes redondeados -->
+                    <div id="carouselBarcelona" class="carousel slide" data-ride="carousel" data-interval="3000">
+                        <!-- Carrusel de imágenes de Barcelona -->
+                        <div class="carousel-inner">
+                            <!-- Contenido del carrusel -->
+                            <div class="carousel-item active">
+                                <!-- Item activo -->
+                                <img src="./images/Villa1.webp" class="d-block w-100" alt="Barcelona Villa Imagen 1">
+                                <!-- Imagen 1 de la villa en Barcelona -->
+                            </div>
+                            <div class="carousel-item">
+                                <!-- Item -->
+                                <img src="./images/Villa2.jpeg" class="d-block w-100" alt="Barcelona Villa Imagen 2">
+                                <!-- Imagen 2 de la villa en Barcelona -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <!-- Contenido de la tarjeta -->
+                        <h5 class="card-title">Barcelona, España</h5>
+                        <!-- Título del alojamiento -->
+                        <p class="card-text">Doce personas<br>12 Enero - 19 Enero<br>1000€/noche</p>
+                        <!-- Descripción del alojamiento -->
+                        <a href="cliente.php?nombre=Hotel Barcelona&ubicacion=Barcelona, España&personas=12&fecha_entrada=2024-01-12&fecha_salida=2024-01-19&precio_noche=1000&imagen1=Villa1.webp&imagen2=barcelona2.jpeg" class="btn btn-primary">Reservar</a>
+                        <!-- Botón para ver detalles -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alojamiento en Sevilla -->
+            <div class="col-md-4 mb-4">
+                <!-- Columna para alojamiento -->
+                <div class="card rounded-lg">
+                    <!-- Tarjeta de alojamiento con bordes redondeados -->
+                    <div id="carouselBarcelona" class="carousel slide" data-ride="carousel" data-interval="3000">
+                        <!-- Carrusel de imágenes de Sevilla -->
+                        <div class="carousel-inner">
+                            <!-- Contenido del carrusel -->
+                            <div class="carousel-item active">
+                                <!-- Item activo -->
+                                <img src="./images/Sevilla.jpg" class="d-block w-100" alt="Sevilla Villa Imagen 1">
+                                <!-- Imagen 1 de la villa en Sevilla -->
+                            </div>
+                            <div class="carousel-item">
+                                <!-- Item -->
+                                <img src="./images/Sevilla2.jpg" class="d-block w-100" alt="Sevilla Villa Imagen 2">
+                                <!-- Imagen 2 de la villa en Sevilla -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <!-- Contenido de la tarjeta -->
+                        <h5 class="card-title">Sevilla, España</h5>
+                        <!-- Título del alojamiento -->
+                        <p class="card-text">Cinco personas<br>16 Marzo - 29 Marzo<br>200€/noche</p>
+                        <!-- Descripción del alojamiento -->
+                        <a href="cliente.php?nombre=Hotel Sevilla&ubicacion=Sevilla, España&personas=5&fecha_entrada=2024-03-16&fecha_salida=2024-03-29&precio_noche=200&imagen1=Sevilla.jpg&imagen2=sevilla2.jpeg" class="btn btn-primary">Reservar</a>
+                        <!-- Botón para ver detalles -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alojamiento en Santander -->
+            <div class="col-md-4 mb-4">
+                <!-- Columna para alojamiento -->
+                <div class="card rounded-lg">
+                    <!-- Tarjeta de alojamiento con bordes redondeados -->
+                    <div id="carouselBarcelona" class="carousel slide" data-ride="carousel" data-interval="3000">
+                        <!-- Carrusel de imágenes de Santander -->
+                        <div class="carousel-inner">
+                            <!-- Contenido del carrusel -->
+                            <div class="carousel-item active">
+                                <!-- Item activo -->
+                                <img src="./images/Rural.jpg" class="d-block w-100" alt="Santander Villa Imagen 1">
+                                <!-- Imagen 1 de la villa en Santander -->
+                            </div>
+                            <div class="carousel-item">
+                                <!-- Item -->
+                                <img src="./images/Rural2.jpg" class="d-block w-100" alt="Santander Villa Imagen 2">
+                                <!-- Imagen 2 de la villa en Santander -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <!-- Contenido de la tarjeta -->
+                        <h5 class="card-title">Santander, España</h5>
+                        <!-- Título del alojamiento -->
+                        <p class="card-text">Siete personas<br>2 Diciembre - 10 Diciembre<br>600€/noche</p>
+                        <!-- Descripción del alojamiento -->
+                        <a href="cliente.php?nombre=Hotel Santander&ubicacion=Santander, España&personas=7&fecha_entrada=2024-12-02&fecha_salida=2024-12-10&precio_noche=600&imagen1=Rural.jpg&imagen2=santander2.jpeg" class="btn btn-primary">Reservar</a>
+                        <!-- Botón para ver detalles -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-4 mb-5">
+        <!-- Contenedor principal con margen superior y inferior -->
+
+        <!-- Título de la sección -->
+        <h2 class="mb-4 text-center">Busca por tipo de alojamiento</h2>
+        <!-- Título centrado -->
+
+        <div class="d-flex flex-row flex-nowrap overflow-auto">
+            <!-- Contenedor de tarjetas con desplazamiento horizontal -->
+
+            <!-- Tarjeta para Villas -->
+            <div class="card card-block mx-2" style="min-width: 260px;">
+                <!-- Tarjeta con margen y tamaño mínimo -->
+                <img src="Images/Villas.jpg" class="card-img-top" alt="Villas">
+                <!-- Imagen superior de la tarjeta -->
+                <div class="card-body">
+                    <!-- Contenido de la tarjeta -->
+                    <h5 class="card-title">Villas</h5>
+                    <!-- Título de la tarjeta -->
+                    <a href="https://www.booking.com/villas" class="btn btn-primary" target="_blank">Explorar</a>
+                    <!-- Enlace para explorar, se abre en una nueva pestaña -->
+                </div>
+            </div>
+            <!-- Fin de la tarjeta de Villas -->
+
+            <!-- Tarjeta para Hoteles -->
+            <div class="card card-block mx-2" style="min-width: 260px;">
+                <!-- Tarjeta con margen y tamaño mínimo -->
+                <img src="Images/HabitacionHotel.jpg" class="card-img-top" alt="Hoteles">
+                <!-- Imagen superior de la tarjeta -->
+                <div class="card-body">
+                    <!-- Contenido de la tarjeta -->
+                    <h5 class="card-title">Hoteles</h5>
+                    <!-- Título de la tarjeta -->
+                    <a href="https://www.booking.com/hotel" class="btn btn-primary" target="_blank">Explorar</a>
+                    <!-- Enlace para explorar, se abre en una nueva pestaña -->
+                </div>
+            </div>
+
+            <!-- Tarjeta para Chalet -->
+            <div class="card card-block mx-2" style="min-width: 260px;">
+                <!-- Tarjeta con margen y tamaño mínimo -->
+                <img src="Images/Chalet.jpeg" class="card-img-top" alt="Chalet">
+                <!-- Imagen superior de la tarjeta -->
+                <div class="card-body">
+                    <!-- Contenido de la tarjeta -->
+                    <h5 class="card-title">Chalet</h5>
+                    <!-- Título de la tarjeta -->
+                    <a href="https://www.booking.com/chalet" class="btn btn-primary" target="_blank">Explorar</a>
+                    <!-- Enlace para explorar, se abre en una nueva pestaña -->
+                </div>
+            </div>
+            <!-- Fin de la tarjeta de Chalet -->
+
+            <!-- Tarjeta para Apartamento -->
+            <div class="card card-block mx-2" style="min-width: 260px;">
+                <!-- Tarjeta con margen y tamaño mínimo -->
+                <img src="Images/Apartamento.jpg" class="card-img-top" alt="Apartamento">
+                <!-- Imagen superior de la tarjeta -->
+                <div class="card-body">
+                    <!-- Contenido de la tarjeta -->
+                    <h5 class="card-title">Apartamento</h5>
+                    <!-- Título de la tarjeta -->
+                    <a href="https://www.booking.com/apartments" class="btn btn-primary" target="_blank">Explorar</a>
+                    <!-- Enlace para explorar, se abre en una nueva pestaña -->
+                </div>
+            </div>
+            <!-- Fin de la tarjeta de Apartamento -->
+
+            <!-- Tarjeta para Resorts -->
+            <div class="card card-block mx-2" style="min-width: 260px;">
+                <!-- Tarjeta con margen y tamaño mínimo -->
+                <img src="Images/Resorts.jpg" class="card-img-top" alt="Resorts">
+                <!-- Imagen superior de la tarjeta -->
+                <div class="card-body">
+                    <!-- Contenido de la tarjeta -->
+                    <h5 class="card-title">Resorts</h5>
+                    <!-- Título de la tarjeta -->
+                    <a href="https://www.booking.com/resorts" class="btn btn-primary" target="_blank">Explorar</a>
+                    <!-- Enlace para explorar, se abre en una nueva pestaña -->
+                </div>
+            </div>
+            <!-- Fin de la tarjeta de Resorts -->
+        </div>
+    </div>
+
+    <div class="container mt-4 mb-5">
+        <!-- Contenedor principal con margen superior y inferior -->
+
+        <div class="card text-white w-100 text-center">
+            <!-- Tarjeta con texto centrado y color blanco -->
+            <img src="./images/paisaje.jpg" class="card-img img-fluid DimImage" alt="Atardecer en un paisaje montañoso">
+            <!-- Imagen de fondo de la tarjeta -->
+            <div class="card-img-overlay d-flex flex-column justify-content-center">
+                <!-- Superposición de la tarjeta, contenido centrado verticalmente -->
+                <h6><b>Te acercamos a un mundo de viajes</b></h6>
+                <!-- Título de la tarjeta -->
+                <div class="d-flex justify-content-center">
+                    <!-- Contenedor de botones con contenido centrado -->
+                    <button type="button" class="btn btn-primary">Iniciar Sesión</button>
+                    <!-- Botón para iniciar sesión -->
+                    <button type="button" class="btn btn-primary ml-3">Crear cuenta</button>
+                    <!-- Botón para crear una cuenta, con margen a la izquierda -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-light">
+        <!-- Pie de página con fondo oscuro y texto claro -->
+        <div class="container py-4">
+            <!-- Contenedor con relleno en todas las direcciones -->
+            <div class="row justify-content-center">
+                <!-- Fila para organizar el contenido -->
+                <!-- Sección de contacto -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <!-- Columna para dispositivos grandes (lg) y medianos (md) -->
+                    <h5 class="text-uppercase">Contacto</h5>
+                    <!-- Título en mayúsculas -->
+                    <p class="mb-2">Teléfono: +34 111 111 111</p>
+                    <!-- Párrafo con número de teléfono -->
+                    <p>Email: <a href="mailto:info@reservahoteles.com" class="text-light">info@reservahoteles.com</a>
+                    </p>
+                    <!-- Párrafo con enlace de correo electrónico -->
+                </div>
+                <!-- Fin de la sección de contacto -->
+
+                <!-- Sección de Compañía -->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <!-- Columna para dispositivos grandes (lg) y medianos (md) -->
+                    <h5 class="text-uppercase">Compañía</h5>
+                    <!-- Título en mayúsculas -->
+                    <ul class="list-unstyled mb-0">
+                        <!-- Lista sin estilos y sin margen inferior -->
+                        <li><a href="#about" class="text-light">Sobre nosotros</a></li>
+                        <!-- Elemento de lista con enlace -->
+                        <li><a href="#privacy" class="text-light">Política de privacidad</a></li>
+                        <!-- Elemento de lista con enlace -->
+                        <li><a href="#terms" class="text-light">Términos de servicio</a></li>
+                        <!-- Elemento de lista con enlace -->
+                    </ul>
+                </div>
+                <!-- Fin de la sección de Compañía -->
+
+                <!-- Sección de redes sociales -->
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <!-- Columna para dispositivos grandes (lg) -->
+                    <h5 class="text-uppercase">Síguenos</h5>
+                    <!-- Título en mayúsculas -->
+                    <ul class="list-unstyled">
+                        <!-- Lista sin estilos y sin margen -->
+                        <li><a href="http://facebook.com" class="text-light me-3"><i class="fab fa-facebook-f"></i>
+                                ReservaDehoteles</a></li>
+                        <!-- Elemento de lista con enlace y icono de Facebook -->
+                        <li><a href="http://twitter.com" class="text-light me-3"><i class="fab fa-twitter"></i>
+                                ReservaDehoteles</a></li>
+                        <!-- Elemento de lista con enlace y icono de Twitter -->
+                        <li><a href="http://instagram.com" class="text-light me-3"><i class="fab fa-instagram"></i>
+                                ReservaDehoteles</a></li>
+                        <!-- Elemento de lista con enlace y icono de Instagram -->
+                    </ul>
+                </div>
+                <!-- Fin de la sección de redes sociales -->
+            </div>
+            <!-- Fin de la fila -->
+        </div>
+        <!-- Fin del contenedor -->
+
+        <div class="bg-secondary text-center py-2">
+            <!-- Fondo secundario con texto centrado y relleno en y -->
+            <p class="mb-0">&copy; 2024 Reservas de Hoteles. Todos los derechos reservados.</p>
+            <!-- Párrafo con texto de derechos de autor -->
+        </div>
+        <!-- Fin del fondo secundario -->
+    </footer>
+    <!-- Fin del pie de página -->
+
+</body>
+
+</html>
